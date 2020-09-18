@@ -2,6 +2,7 @@ package com.example.demoRestProject.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import com.example.demoRestProject.dto.UserDto;
 
 import javax.persistence.*;
 
@@ -26,4 +27,14 @@ public class User {
 
     @Column(name = "fullName")
     private String fullName;
+
+    public User() {
+
+    }
+
+    public User(UserDto userDto) {
+        this.username = userDto.getUsername();
+        this.password = userDto.getPassword();
+        this.fullName = userDto.getFullName();
+    }
 }
